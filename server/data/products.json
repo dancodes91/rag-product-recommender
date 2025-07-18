@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "name": "Relaxation Tea",
+    "type": "beverage",
+    "description": "A soothing herbal tea blend designed for relaxation and stress relief.",
+    "effects": ["relaxation", "stress relief"],
+    "ingredients": ["Chamomile", "Lavender"],
+    "price": 12.99,
+    "sales_data": {
+      "units_sold": 120,
+      "last_month_revenue": 1558.8
+    },
+    "category": "wellness",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Energy Boost Coffee",
+    "type": "beverage",
+    "description": "Premium coffee blend with natural energy-boosting properties.",
+    "effects": ["energy boost", "focus enhancement"],
+    "ingredients": ["Arabica Coffee", "Ginseng", "B-Vitamins"],
+    "price": 18.99,
+    "sales_data": {
+      "units_sold": 200,
+      "last_month_revenue": 3798.0
+    },
+    "category": "energy",
+    "rating": 4.7
+  },
+  {
+    "id": 3,
+    "name": "Sleep Support Capsules",
+    "type": "supplement",
+    "description": "Natural sleep aid with melatonin and herbal extracts.",
+    "effects": ["improved sleep", "relaxation"],
+    "ingredients": ["Melatonin", "Valerian Root", "Passionflower"],
+    "price": 24.99,
+    "sales_data": {
+      "units_sold": 85,
+      "last_month_revenue": 2124.15
+    },
+    "category": "wellness",
+    "rating": 4.3
+  },
+  {
+    "id": 4,
+    "name": "Focus Blend Smoothie Mix",
+    "type": "food",
+    "description": "Nutrient-rich smoothie mix designed to enhance cognitive function.",
+    "effects": ["focus enhancement", "mental clarity"],
+    "ingredients": ["Blueberries", "Spinach", "Lion's Mane Mushroom", "MCT Oil"],
+    "price": 29.99,
+    "sales_data": {
+      "units_sold": 65,
+      "last_month_revenue": 1949.35
+    },
+    "category": "nutrition",
+    "rating": 4.6
+  },
+  {
+    "id": 5,
+    "name": "Immunity Booster Tea",
+    "type": "beverage",
+    "description": "Herbal tea blend packed with immune-supporting ingredients.",
+    "effects": ["immune support", "antioxidant boost"],
+    "ingredients": ["Echinacea", "Elderberry", "Ginger", "Turmeric"],
+    "price": 15.99,
+    "sales_data": {
+      "units_sold": 150,
+      "last_month_revenue": 2398.5
+    },
+    "category": "wellness",
+    "rating": 4.4
+  }
+]

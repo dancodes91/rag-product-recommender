@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Chamomile",
+    "properties": "Mild, floral aroma; known for calming effects",
+    "common_effects": ["relaxation", "improved sleep"],
+    "scientific_info": "Contains apigenin, an antioxidant that binds to certain receptors in your brain that may promote sleepiness and reduce insomnia."
+  },
+  {
+    "name": "Lavender",
+    "properties": "Aromatic herb with soothing properties",
+    "common_effects": ["relaxation", "stress relief", "improved sleep"],
+    "scientific_info": "Contains linalool and linalyl acetate, compounds that have been shown to have sedative effects."
+  },
+  {
+    "name": "Arabica Coffee",
+    "properties": "High-quality coffee beans with rich flavor and moderate caffeine",
+    "common_effects": ["energy boost", "alertness", "focus enhancement"],
+    "scientific_info": "Contains caffeine which blocks adenosine receptors, preventing drowsiness and increasing alertness."
+  },
+  {
+    "name": "Ginseng",
+    "properties": "Adaptogenic herb known for energy and cognitive benefits",
+    "common_effects": ["energy boost", "mental clarity", "stress adaptation"],
+    "scientific_info": "Contains ginsenosides that may help reduce inflammation and provide antioxidant benefits."
+  },
+  {
+    "name": "Melatonin",
+    "properties": "Natural hormone that regulates sleep-wake cycles",
+    "common_effects": ["improved sleep", "circadian rhythm regulation"],
+    "scientific_info": "Naturally produced by the pineal gland, helps signal to your body that it's time to sleep."
+  },
+  {
+    "name": "Valerian Root",
+    "properties": "Herbal sedative with earthy aroma",
+    "common_effects": ["improved sleep", "anxiety reduction", "relaxation"],
+    "scientific_info": "Contains valerenic acid which may increase GABA levels in the brain, promoting relaxation."
+  },
+  {
+    "name": "Lion's Mane Mushroom",
+    "properties": "Medicinal mushroom with neuroprotective properties",
+    "common_effects": ["cognitive enhancement", "focus improvement", "neuroprotection"],
+    "scientific_info": "Contains hericenones and erinacines that may stimulate nerve growth factor production."
+  },
+  {
+    "name": "Echinacea",
+    "properties": "Immune-supporting herb with anti-inflammatory properties",
+    "common_effects": ["immune support", "anti-inflammatory"],
+    "scientific_info": "Contains alkamides, glycoproteins, and polysaccharides that may boost immune system function."
+  },
+  {
+    "name": "Elderberry",
+    "properties": "Antioxidant-rich berry with immune-boosting properties",
+    "common_effects": ["immune support", "antioxidant boost"],
+    "scientific_info": "High in anthocyanins and flavonoids that provide strong antioxidant and anti-inflammatory effects."
+  },
+  {
+    "name": "Turmeric",
+    "properties": "Golden spice with powerful anti-inflammatory compounds",
+    "common_effects": ["anti-inflammatory", "antioxidant boost", "joint support"],
+    "scientific_info": "Contains curcumin, a potent anti-inflammatory compound that may help reduce chronic inflammation."
+  }
+]

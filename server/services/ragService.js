@@ -86,6 +86,77 @@ class RAGService {
     
     return Math.min(matchScore, 1.0);
   }
+
+  retrieve(query, topK = 5) {
+    const queryLower = query.toLowerCase();
+    
+    const scored = this.knowledgeBase.map(entry => ({
+      ...entry,
+      score: this.calculateSimilarity(queryLower, entry.content.toLowerCase())
+    }));
+
+    const topResults = scored
+      .sort((a, b) => b.score - a.score)
+      .slice(0, topK);
+    
+    console.log(`RAG Query: "${query}"`);
+    console.log('Top 3 results:', topResults.slice(0, 3).map(r => ({ 
+      type: r.type, 
+      score: r.score, 
+      content: r.content.substring(0, 100) + '...' 
+    })));
+    
+    return topResults.filter(entry => entry.score > 0.01);
+  }
+
+  generateAugmentedResponse(query, retrievedDocs) {
+    if (retrievedDocs.length === 0) {
+      return {
+        response: "I don't have specific information about that query.",
+        sources: []
+      };
+    }
+
+    let response = "";
+    const sources = [];
+
+    const productDocs = retrievedDocs.filter(doc => doc.type === 'product');
+    const ingredientDocs = retrievedDocs.filter(doc => doc.type === 'ingredient');
+
+    if (productDocs.length > 0) {
+      response += "Based on our product catalog:\n";
+      productDocs.forEach(doc => {
+        response += `• ${doc.content}\n`;
+        sources.push({
+          type: doc.type,
+          id: doc.metadata.productId || doc.metadata.name,
+          relevance: doc.score
+        });
+      });
+    }
+
+    if (ingredientDocs.length > 0) {
+      response += "\nIngredient information:\n";
+      ingredientDocs.forEach(doc => {
+        response += `• ${doc.content}\n`;
+        sources.push({
+          type: doc.type,
+          name: doc.metadata.name,
+          relevance: doc.score
+        });
+      });
+    }
+
+    return {
+      response: response.trim(),
+      sources: sources
+    };
+  }
+
+  query(userQuery) {
+    const retrievedDocs = this.retrieve(userQuery);
+    return this.generateAugmentedResponse(userQuery, retrievedDocs);
+  }
 }
 
 module.exports = RAGService;

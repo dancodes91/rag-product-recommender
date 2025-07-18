@@ -157,6 +157,31 @@ class RAGService {
     const retrievedDocs = this.retrieve(userQuery);
     return this.generateAugmentedResponse(userQuery, retrievedDocs);
   }
+
+  getEnhancedProductInfo(productId) {
+    const product = this.products.find(p => p.id === productId);
+    if (!product) {
+      return null;
+    }
+
+    const query = `${product.ingredients.join(' ')} ${product.effects.join(' ')} ${product.category}`;
+    const retrievedDocs = this.retrieve(query);
+    
+    const relevantDocs = retrievedDocs.filter(doc => 
+      doc.type === 'ingredient' || (doc.type === 'product' && doc.metadata.productId !== productId)
+    );
+
+    const augmentedInfo = this.generateAugmentedResponse(query, relevantDocs);
+
+    return {
+      product: product,
+      enhancedInfo: augmentedInfo,
+      relatedProducts: relevantDocs
+        .filter(doc => doc.type === 'product')
+        .map(doc => doc.metadata.productId)
+        .slice(0, 3)
+    };
+  }
 }
 
 module.exports = RAGService;
